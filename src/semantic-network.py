@@ -134,14 +134,8 @@ class Grafo:
 
         return output
 
-    def busca_por_all_relacao_destino(
-        self,
-        relacao,
-        destino,
-        checked,
-        ):
+    def busca_por_all_relacao_destino(self, relacao, destino, checked,):
         output = ''
-
         for origem in self.nomes:
             index_destino = self.nomes.index(destino)
             g.busca_em_largura(self.nomes.index(origem))
@@ -446,7 +440,7 @@ for nome in nomes:
 
 l1 = Label(win, text='Subject')
 l1.grid(column=0, row=2, padx=50, pady=(25, 0))
-cb_subject = ttk.Combobox(win, values=opcoes, width=20)
+cb_subject = ttk.Combobox(win, values=opcoes, width=25)
 cb_subject.grid(column=0, row=3, padx=50, pady=5)
 cb_subject.current(0)
 
@@ -461,13 +455,13 @@ for i in range(len(g.grafo)):
 
 
 
-cb_relation = ttk.Combobox(win, values=opcoes_2, width=20)
+cb_relation = ttk.Combobox(win, values=opcoes_2, width=25)
 cb_relation.grid(column=0, row=5, padx=50, pady=5)
 cb_relation.current(0)
 
 l3 = Label(win, text='Predicate')
 l3.grid(column=0, row=6, padx=50, pady=(25, 0))
-cb_predicate = ttk.Combobox(win, values=opcoes, width=20)
+cb_predicate = ttk.Combobox(win, values=opcoes, width=25)
 cb_predicate.grid(column=0, row=7, padx=50, pady=5)
 cb_predicate.current(0)
 
@@ -502,7 +496,9 @@ def clicked_btn_1():
             txt.insert(INSERT, output)
         elif cb_subject.get() == 'All' and cb_relation.get() != 'All' \
             and cb_predicate.get() != 'All':
-            output = busca_por_all_relacao_destino(cb_relation.get(), cb_predicate.get(), chk_state.get())
+
+            output = g.busca_por_all_relacao_destino(cb_relation.get(), cb_predicate.get(), chk_state.get())
+
             if output == "":
                 output = "Não há ligação"
 
