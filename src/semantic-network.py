@@ -5,9 +5,11 @@
 
 import networkx as nx
 import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
 from tkinter import *
 from tkinter import ttk
 from tkinter import scrolledtext
+from PIL import ImageTk, Image
 
 # -------------------------------------------------------------------------
 
@@ -444,19 +446,28 @@ for nome in nomes:
 
 l1 = Label(win, text='Subject')
 l1.grid(column=0, row=2, padx=50, pady=(25, 0))
-cb_subject = ttk.Combobox(win, values=opcoes, width=10)
+cb_subject = ttk.Combobox(win, values=opcoes, width=20)
 cb_subject.grid(column=0, row=3, padx=50, pady=5)
 cb_subject.current(0)
 
 l2 = Label(win, text='Relation')
 l2.grid(column=0, row=4, padx=50, pady=(25, 0))
-cb_relation = ttk.Combobox(win, values=['All', 'tem', 'eh', 'come'], width=10)
+
+opcoes_2 = ["All"]
+for i in range(len(g.grafo)):
+    for j in range(len(g.grafo)):
+        if g.grafo[i][j] not in opcoes_2 and g.grafo[i][j] != 0:
+            opcoes_2.append(g.grafo[i][j])
+
+
+
+cb_relation = ttk.Combobox(win, values=opcoes_2, width=20)
 cb_relation.grid(column=0, row=5, padx=50, pady=5)
 cb_relation.current(0)
 
 l3 = Label(win, text='Predicate')
 l3.grid(column=0, row=6, padx=50, pady=(25, 0))
-cb_predicate = ttk.Combobox(win, values=opcoes, width=10)
+cb_predicate = ttk.Combobox(win, values=opcoes, width=20)
 cb_predicate.grid(column=0, row=7, padx=50, pady=5)
 cb_predicate.current(0)
 
@@ -470,43 +481,60 @@ def clicked_btn_1():
     else:
         if cb_subject.get() == 'All' and cb_relation.get() == 'All' \
             and cb_predicate.get() == 'All':
-            txt.insert(INSERT, g.busca_por_all_all_all(chk_state.get()))
+            output = g.busca_por_all_all_all(chk_state.get())
+            if output == "":
+                output = "Não há ligação"
+
+            txt.insert(INSERT, output)
         elif cb_subject.get() == 'All' and cb_relation.get() == 'All' \
             and cb_predicate.get() != 'All':
-            txt.insert(INSERT,
-                       g.busca_por_all_all_destino(cb_predicate.get(),
-                       chk_state.get()))
+            output = g.busca_por_all_all_destino(cb_predicate.get(), chk_state.get())
+            if output == "":
+                output = "Não há ligação"
+
+            txt.insert(INSERT, output)
         elif cb_subject.get() == 'All' and cb_relation.get() != 'All' \
             and cb_predicate.get() == 'All':
-            txt.insert(INSERT,
-                       g.busca_por_all_relacao_all(cb_relation.get(),
-                       chk_state.get()))
+            output = g.busca_por_all_relacao_all(cb_relation.get(), chk_state.get())
+            if output == "":
+                output = "Não há ligação"
+
+            txt.insert(INSERT, output)
         elif cb_subject.get() == 'All' and cb_relation.get() != 'All' \
             and cb_predicate.get() != 'All':
-            txt.insert(INSERT,
-                       g.busca_por_all_relacao_destino(cb_relation.get(),
-                       cb_predicate.get(), chk_state.get()))
+            output = busca_por_all_relacao_destino(cb_relation.get(), cb_predicate.get(), chk_state.get())
+            if output == "":
+                output = "Não há ligação"
+
+            txt.insert(INSERT, output)
         elif cb_subject.get() != 'All' and cb_relation.get() == 'All' \
             and cb_predicate.get() == 'All':
-            txt.insert(INSERT,
-                       g.busca_por_origem_all_all(cb_subject.get(),
-                       chk_state.get()))
+            output = g.busca_por_origem_all_all(cb_subject.get(), chk_state.get())
+            if output == "":
+                output = "Não há ligação"
+
+            txt.insert(INSERT, output)
         elif cb_subject.get() != 'All' and cb_relation.get() == 'All' \
             and cb_predicate.get() != 'All':
-            txt.insert(INSERT,
-                       g.busca_por_origem_all_destino(cb_subject.get(),
-                       cb_predicate.get(), chk_state.get()))
+            output = g.busca_por_origem_all_destino(cb_subject.get(), cb_predicate.get(), chk_state.get())
+            if output == "":
+                output = "Não há ligação"
+
+            txt.insert(INSERT, output)
         elif cb_subject.get() != 'All' and cb_relation.get() != 'All' \
             and cb_predicate.get() == 'All':
-            txt.insert(INSERT,
-                       g.busca_por_origem_relacao_all(cb_subject.get(),
-                       cb_relation.get(), chk_state.get()))
+            output = g.busca_por_origem_relacao_all(cb_subject.get(), cb_relation.get(), chk_state.get())
+            if output == "":
+                output = "Não há ligação"
+
+            txt.insert(INSERT, output)
         elif cb_subject.get() != 'All' and cb_relation.get() != 'All' \
             and cb_predicate.get() != 'All':
-            txt.insert(INSERT,
-                       g.busca_por_origem_relacao_destino(cb_subject.get(),
-                       cb_relation.get(), cb_predicate.get(),
-                       chk_state.get()))
+            output = g.busca_por_origem_relacao_destino(cb_subject.get(), cb_relation.get(), cb_predicate.get(), chk_state.get())
+            if output == "":
+                output = "Não há ligação"
+
+            txt.insert(INSERT, output)
 
     txt.config(state=DISABLED)
 
@@ -724,7 +752,6 @@ def clicked_btn_2():
     nx.draw_networkx_edge_labels(DG, pos, edge_labels=labels, width=1.0)
     nx.draw_networkx(DG, pos, with_labels=True, node_size=500, edge_color='black', font_size=10)
     plt.show()
-
 
 btn_2 = Button(win, text='Show network', command=clicked_btn_2)
 btn_2.grid(column=0, row=8, padx=50, pady=(25, 0))
