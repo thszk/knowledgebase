@@ -5,10 +5,10 @@
 
 import networkx as nx
 import matplotlib.pyplot as plt
-import cv2 as cv
 from tkinter import *
 from tkinter import ttk
 from tkinter import scrolledtext
+from PIL import Image
 
 # -------------------------------------------------------------------------
 
@@ -535,9 +535,12 @@ def clicked_btn_1():
 
     txt.config(state=DISABLED)
 
+# abre a imagem estatica
 def clicked_btn_3():
-    cv.imshow('a',cv.imread('../resources/base.png',1))
+    im = Image.open('./resources/base.png')
+    im.show()
 
+# abre a imagem gerando grafo
 def clicked_btn_2():
     # exibe a rede de forma dinamica
 

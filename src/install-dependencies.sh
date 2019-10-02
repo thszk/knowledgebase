@@ -13,4 +13,4 @@ pip3 install setuptools
 apt install python3-tk -y
 pip3 install matplotlib==3.1.0
 pip3 install networkx==2.3
-apt install python3-opencv -y
+pip3 install Pillow
