@@ -40,6 +40,12 @@ A implementação usa os softwares listados abaixo, com o comando para instalaç
   $ pip3 install networkx==2.3
 ```
 
+- Pillow
+
+```
+  $ pip3 install Pillow
+```
+
 ### Script de Instalação
 
 Dê permissão de execução ao script:
