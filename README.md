@@ -5,7 +5,9 @@ Esta implementação demonstra de forma simplificada o funcionamento de uma base
 
 ## Instalação
 
-A implementação usa os softwares listados abaixo, com o comando para instalação individual em distribuilções Linux (Ubuntu e derivados). Ou se preferir pode executar o script de instalaçao ``` $ sudo src/install-dependencies.sh ```.
+A implementação usa os softwares listados abaixo, com o comando para instalação individual em distribuilções Linux (Ubuntu e derivados). Ou se preferir pode utilizar o script de instalaçao.
+
+### Instalação Manual
 
 - Python 3.7.3
 
@@ -36,6 +38,20 @@ A implementação usa os softwares listados abaixo, com o comando para instalaç
 
 ```
   $ pip3 install networkx==2.3
+```
+
+### Script de Instalação
+
+Dê permissão de execução ao script:
+
+```
+  $ chmod +x src/install-dependencies.sh
+```
+
+Execute com permissão de root:
+
+```
+  $ sudo src/install-dependencies.sh
 ```
 
 
