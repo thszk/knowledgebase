@@ -10,7 +10,7 @@ A implementação usa os softwares listados abaixo, com o comando para instalaç
 - Python .3.7.3
 
 ```
-  $ sudo apt-get install python3-dev
+  $ sudo apt install python3-dev
 ```
 
 - pip 9.0.1
@@ -23,7 +23,7 @@ A implementação usa os softwares listados abaixo, com o comando para instalaç
 - TKinter 8.6
 
 ```
-  $ sudo apt-get install python3-tk
+  $ sudo apt install python3-tk
 ```
 
 - Matplotlib 3.1.0
