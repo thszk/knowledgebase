@@ -5,7 +5,7 @@
 
 import networkx as nx
 import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
+import cv2 as cv
 from tkinter import *
 from tkinter import ttk
 from tkinter import scrolledtext
@@ -535,6 +535,9 @@ def clicked_btn_1():
 
     txt.config(state=DISABLED)
 
+def clicked_btn_3():
+    cv.imshow('a',cv.imread('../resources/base.png',1))
+
 def clicked_btn_2():
     # exibe a rede de forma dinamica
 
@@ -751,19 +754,22 @@ def clicked_btn_2():
     plt.show()
 
 btn_2 = Button(win, text='Show network', command=clicked_btn_2)
-btn_2.grid(column=0, row=8, padx=50, pady=(25, 0))
+btn_2.grid(column=0, row=8, padx=50, pady=(15, 0))
+
+btn_3 = Button(win, text='Show network image', command=clicked_btn_3)
+btn_3.grid(column=0, row=9, padx=50, pady=(5, 0))
 
 btn = Button(win, text='Search', command=clicked_btn_1)
-btn.grid(column=0, row=9, padx=50, pady=(5, 0))
+btn.grid(column=0, row=10, padx=50, pady=(15, 0))
 
 chk_state = BooleanVar()
 chk_state.set(False)  # set check state
 chk = Checkbutton(win, text='Show path', var=chk_state)
-chk.grid(column=0, row=10, padx=1, pady=(5, 0))
+chk.grid(column=0, row=11, padx=1, pady=(5, 0))
 
 txt = scrolledtext.ScrolledText(win, width=50, height=10)
 txt.insert(INSERT, 'Here are the inferences')
-txt.grid(column=0, row=11, padx=50, pady=20)
+txt.grid(column=0, row=12, padx=50, pady=20)
 txt.config(state=DISABLED)
 
 win.mainloop()
