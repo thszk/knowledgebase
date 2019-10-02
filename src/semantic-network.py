@@ -9,7 +9,6 @@ import matplotlib.image as mpimg
 from tkinter import *
 from tkinter import ttk
 from tkinter import scrolledtext
-from PIL import ImageTk, Image
 
 # -------------------------------------------------------------------------
 
