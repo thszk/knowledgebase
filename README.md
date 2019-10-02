@@ -5,7 +5,7 @@ Esta implementação demonstra de forma simplificada o funcionamento de uma base
 
 ## Instalação
 
-A implementação usa os softwares listados abaixo, com o comando para instalação em distribuilções Linux (Ubuntu e derivados).
+A implementação usa os softwares listados abaixo, com o comando para instalação individual em distribuilções Linux (Ubuntu e derivados). Ou se preferir pode executar o script de instalaçao ``` $ sudo src/install-dependencies.sh ```
 
 - Python .3.7.3
 
@@ -90,6 +90,6 @@ Thiago Suzuqui Lodi | contato: ra165478@ucdb.br
 
 ## Estrutura de diretórios
 
-src/ - contém o código fonte do projeto
+src/ - contém o código fonte do projeto e script para instalação de dependências
 
 resources/ - contém o executável do programa draw.io, arquivo para edição do diagrama do projeto e imagem png do diagrama do projeto.
