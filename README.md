@@ -5,7 +5,7 @@ Esta implementação demonstra de forma simplificada o funcionamento de uma base
 
 ## Instalação
 
-A implementação usa os softwares listados abaixo, com o comando para instalação individual em distribuilções Linux (Ubuntu e derivados). Ou se preferir pode executar o script de instalaçao ``` $ sudo src/install-dependencies.sh ```
+A implementação usa os softwares listados abaixo, com o comando para instalação individual em distribuilções Linux (Ubuntu e derivados). Ou se preferir pode executar o script de instalaçao ``` $ sudo src/install-dependencies.sh ```.
 
 - Python .3.7.3
 
