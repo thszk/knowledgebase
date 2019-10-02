@@ -4,6 +4,8 @@ if [ "$USER" != "root" ]; then
   echo "Without execute permission" && exit 1
 fi
 
+apt update && upgrade
+
 apt install python3-dev -y
 apt install python3-pip -y
 pip3 install setuptools
