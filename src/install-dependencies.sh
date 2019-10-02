@@ -5,7 +5,7 @@ if [ "$USER" != "root" ]; then
 fi
 
 apt update
-apt upgrade -y
+apt upgrade -y 
 
 apt install python3-dev -y
 apt install python3-pip -y
