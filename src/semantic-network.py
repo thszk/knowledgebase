@@ -438,6 +438,8 @@ opcoes.append('All')
 for nome in nomes:
     opcoes.append(nome)
 
+opcoes.sort()
+
 l1 = Label(win, text='Subject')
 l1.grid(column=0, row=2, padx=50, pady=(25, 0))
 cb_subject = ttk.Combobox(win, values=opcoes, width=25)
@@ -454,7 +456,7 @@ for i in range(len(g.grafo)):
             opcoes_2.append(g.grafo[i][j])
 
 
-
+opcoes_2.sort()
 cb_relation = ttk.Combobox(win, values=opcoes_2, width=25)
 cb_relation.grid(column=0, row=5, padx=50, pady=5)
 cb_relation.current(0)
@@ -477,21 +479,21 @@ def clicked_btn_1():
             and cb_predicate.get() == 'All':
             output = g.busca_por_all_all_all(chk_state.get())
             if output == "":
-                output = "Não há ligação"
+                output = "Não"
 
             txt.insert(INSERT, output)
         elif cb_subject.get() == 'All' and cb_relation.get() == 'All' \
             and cb_predicate.get() != 'All':
             output = g.busca_por_all_all_destino(cb_predicate.get(), chk_state.get())
             if output == "":
-                output = "Não há ligação"
+                output = "Não"
 
             txt.insert(INSERT, output)
         elif cb_subject.get() == 'All' and cb_relation.get() != 'All' \
             and cb_predicate.get() == 'All':
             output = g.busca_por_all_relacao_all(cb_relation.get(), chk_state.get())
             if output == "":
-                output = "Não há ligação"
+                output = "Não"
 
             txt.insert(INSERT, output)
         elif cb_subject.get() == 'All' and cb_relation.get() != 'All' \
@@ -500,35 +502,35 @@ def clicked_btn_1():
             output = g.busca_por_all_relacao_destino(cb_relation.get(), cb_predicate.get(), chk_state.get())
 
             if output == "":
-                output = "Não há ligação"
+                output = "Não"
 
             txt.insert(INSERT, output)
         elif cb_subject.get() != 'All' and cb_relation.get() == 'All' \
             and cb_predicate.get() == 'All':
             output = g.busca_por_origem_all_all(cb_subject.get(), chk_state.get())
             if output == "":
-                output = "Não há ligação"
+                output = "Não"
 
             txt.insert(INSERT, output)
         elif cb_subject.get() != 'All' and cb_relation.get() == 'All' \
             and cb_predicate.get() != 'All':
             output = g.busca_por_origem_all_destino(cb_subject.get(), cb_predicate.get(), chk_state.get())
             if output == "":
-                output = "Não há ligação"
+                output = "Não"
 
             txt.insert(INSERT, output)
         elif cb_subject.get() != 'All' and cb_relation.get() != 'All' \
             and cb_predicate.get() == 'All':
             output = g.busca_por_origem_relacao_all(cb_subject.get(), cb_relation.get(), chk_state.get())
             if output == "":
-                output = "Não há ligação"
+                output = "Não"
 
             txt.insert(INSERT, output)
         elif cb_subject.get() != 'All' and cb_relation.get() != 'All' \
             and cb_predicate.get() != 'All':
             output = g.busca_por_origem_relacao_destino(cb_subject.get(), cb_relation.get(), cb_predicate.get(), chk_state.get())
             if output == "":
-                output = "Não há ligação"
+                output = "Não"
 
             txt.insert(INSERT, output)
 
