@@ -5,7 +5,7 @@ Esta implementação demonstra de forma simplificada o funcionamento de uma base
 
 ## Instalação
 
-A implementação usa os softwares listados abaixo, com o comando para instalação individual em distribuilções Linux (Ubuntu e derivados). Ou se preferir pode utilizar o script de instalaçao.
+A implementação usa os softwares listados abaixo, com o comando para instalação individual em distribuições Linux (Debian, Ubuntu e derivados). Ou se preferir pode utilizar o script de instalação.
 
 ### Instalação Manual
 
@@ -72,9 +72,9 @@ Com o terminal aberto na pasta do projeto execute o comando:
 
 ## Como Utilizar
 
-Ao iniciar o programa será exibida uma tela contendo 3 campos de seleção, esses campos estão identificados como Sujeito (Subject), Relação (Relation) e Predicado (Predicate), com botões de exibir a rede (Show network) em forma de diagrama gerado programaticamente e Buscar (Search) a existência de relações entre nós, podendo também exibir o resultado através do caminho entre sujeito e predicado com sua relação(ões) (Show Path).
+Ao iniciar o programa será exibida uma tela contendo 3 campos de seleção, esses campos estão identificados como Sujeito (Subject), Relação (Relation) e Predicado (Predicate), com botões de exibir a rede (Show network) em forma de diagrama gerado programaticamente, exibir imagem da rede (Show network image) para exibir o diagrama estático, Buscar (Search) a existência de relações entre nós e podendo também exibir o resultado através do caminho entre sujeito e predicado com sua relação(ões) (Show Path).
 
-Ao clicar nos campos de seleção será exibida uma lista contendo nós e relações da base, pode ser clicado no item para o selecionar e depois no botão Buscar para procurar a ocorrência na rede semântica.
+Ao clicar nos campos de seleção será exibida uma lista contendo nós e relações da base, pode ser clicado no item para o selecionar e depois no botão Buscar para procurar a ocorrência na rede semântica. Também é possível escrever nos campos para fazer a busca.
 
 Exemplo de buscas:
 
@@ -90,10 +90,12 @@ Exemplo de buscas:
 
 Recursos auxiliares:
 
-Está disponível uma representação da rede semântica em forma de diagrama no arquivo ``` ./resources/base.png``` , criado através da ferramenta online [draw.io](https://www.draw.io/).
+Está disponível uma representação da rede semântica em forma de diagrama no arquivo ``` ./resources/base.png``` , criado através da ferramenta online [draw.io](https://www.draw.io/). Esse recurso também pode ser visualizado clicando no botão ```Show network image``` pelo software.
 
 
 ## Sistemas Operacionais Suportados
+
+Debian GNU/Linux 10 (Buster)*
 
 Ubuntu 16.04 LTS ou superior*
 
@@ -114,4 +116,4 @@ Thiago Suzuqui Lodi | contato: ra165478@ucdb.br
 
 src/ - contém o código fonte do projeto e script para instalação de dependências
 
-resources/ - contém o executável do programa draw.io, arquivo para edição do diagrama do projeto e imagem png do diagrama do projeto.
+resources/ - contém o executável do programa draw.io, arquivo para edição do diagrama e imagem png do diagrama.
