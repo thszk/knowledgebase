@@ -74,7 +74,7 @@ Com o terminal aberto na pasta do projeto execute o comando:
 
 Ao iniciar o programa será exibida uma tela contendo 3 campos de seleção, esses campos estão identificados como Sujeito (Subject), Relação (Relation) e Predicado (Predicate), com botões de exibir a rede (Show network) em forma de diagrama gerado programaticamente, exibir imagem da rede (Show network image) para exibir o diagrama estático, Buscar (Search) a existência de relações entre nós e podendo também exibir o resultado através do caminho entre sujeito e predicado com sua relação(ões) (Show Path).
 
-Ao clicar nos campos de seleção será exibida uma lista contendo nós e relações da base, pode ser clicado no item para o selecionar e depois no botão Buscar para procurar a ocorrência na rede semântica. Também é possível escrever nos campos para fazer a busca.
+Ao clicar nos campos de seleção será exibida uma lista contendo nós e relações da base, pode ser clicado no item para o selecionar e depois no botão Buscar para procurar a ocorrência na rede semântica. Também é possível escrever nos campos para fazer a busca desde que o termo digitado esteja na lista.
 
 Exemplo de buscas:
 
